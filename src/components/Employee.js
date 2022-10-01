@@ -1,6 +1,6 @@
 import React from "react";
 
-const Employee = ({ employee }) => {
+const Employee = ({ employee, deleteEmployee }) => {
   return (
     <tr key={employee.id}>
       <td className="text-left px-6 py-4 whitespace-nowrap">
@@ -21,8 +21,8 @@ const Employee = ({ employee }) => {
             Edit
           </a>
           <a
-            href="www.facebook.com"
-            className="rounded bg-red-600 hover:bg-red-700 text-white px-6 py-2 font-semibold"
+            onClick={(e, id) => deleteEmployee(e, employee.id)}
+            className="rounded bg-red-600 hover:bg-red-700 text-white px-6 py-2 font-semibold hover:cursor-pointer"
           >
             Delete
           </a>
